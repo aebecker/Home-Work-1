@@ -141,7 +141,7 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
             channelTitleLable.text = object.snippet?.channelTitle
         }
         if let durationLable = cell.viewWithTag(4) as? UILabel {
-            durationLable.text = object.contentDetails?.duration
+            durationLable.text = object.contentDetails?.duration ?? " "
         }
         if let publishedAtLable = cell.viewWithTag(5) as? UILabel {
             let dateFormatterIn = DateFormatter()
