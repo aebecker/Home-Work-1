@@ -13,7 +13,8 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
 
-
+    let apiKey = "AIzaSyAPm0cB8HZslYP1fL37U6TnXdLLOnteNAM"
+    let playListId = "UC75vpw6Rwu6lBO2-Zz_DUEQ" // Top 10
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,6 +26,30 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        let youTubeURLString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(playListId)&key=\(apiKey)"
+        
+        // Create a NSURL object based on the above string.
+        let targetURL = NSURL(string: youTubeURLString)
+        
+        // Fetch the playlist from Google.
+        performGetRequest(targetURL, completion: { (data, HTTPStatusCode, error) -> Void in
+            
+            if HTTPStatusCode == 200 && error == nil
+            {
+                // Convert the JSON data into a dictionary.
+                let resultsDict = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! Dictionary<NSObject, AnyObject>
+                
+                print("resultsDict = \(resultsDict)")
+            }
+            else
+            {
+                print("HTTP Status Code = \(HTTPStatusCode)")
+                print("Error while loading channel videos: \(error)")
+            }
+            
+        })
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
