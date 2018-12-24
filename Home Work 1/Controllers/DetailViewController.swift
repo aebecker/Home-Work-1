@@ -33,7 +33,7 @@ class DetailViewController: UIViewController {
                 wv.load(youtubeRequest)
             }
             if let label = detailDescriptionLabel {
-                label.text = detail.snippet?.localised?.description
+                label.text = detail.snippet?.description
             }
         }
     }

@@ -8,45 +8,61 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController, UISearchBarDelegate {
 
     var detailViewController: DetailViewController? = nil
     var tableObjects = [Video]()
 
-    let endPoint = "https://www.googleapis.com/youtube/v3/videos"
+    let videosEndPoint = "https://www.googleapis.com/youtube/v3/videos"
+    let queryEndPoint = "https://www.googleapis.com/youtube/v3/search"
     let apk1 = "AIzaSyAPm0cB8HZslY"
     let apk2 = "P1fL37U6TnXdLLOnteNAM"
     let videoCategoryId = "1" // Top 10 of film
+    
+    var searchActive = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         navigationItem.leftBarButtonItem = editButtonItem
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        navigationItem.rightBarButtonItem = addButton
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
+//        navigationItem.rightBarButtonItem = addButton
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-//        let youTubeURLString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(playListId)&key=\(apiKey)"        
-        UTTop10API().getTopTenVideos(targetURLString: endPoint, videoCategoryId: videoCategoryId, apiKey: apk1 + apk2, completion: {
+        let searchBar = UISearchBar()
+        searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 70)
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = " Search Here....."
+        searchBar.sizeToFit()
+        
+        self.tableView.tableHeaderView = searchBar
+        
+    }
+    
+    private func search(searchText: String) {
+//        let youTubeURLString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(playListId)&key=\(apiKey)"
+       UTTop10API().getTopTenVideos(targetURLString: queryEndPoint, searchText: searchText, apiKey: apk1 + apk2, completion: {
             videoList in
             
-                if let videoList = videoList {
-                    self.tableObjects = videoList.items
-                    self.tableView.reloadData()
-                } else {
-                    // else popup bad data
-                    self.messageBox(messageTitle: "Bad Request",
-                                    messageAlert: "Error from video list request",
-                                    messageBoxStyle: .alert,
-                                    alertActionStyle: .default,
-                                    completionHandler: {})
-                }
+            if let videoList = videoList {
+                self.tableObjects = videoList.items
+                self.tableView.reloadData()
+            } else {
+                // else popup bad data
+                self.messageBox(messageTitle: "Bad Request",
+                                messageAlert: "Error from video list request",
+                                messageBoxStyle: .alert,
+                                alertActionStyle: .default,
+                                completionHandler: {})
+            }
             
-            })
+        })
     }
     
     private func messageBox(messageTitle: String,
@@ -74,13 +90,12 @@ class MasterViewController: UITableViewController {
 
     @objc
     func insertNewObject(_ sender: Any) {
-//        objects.insert(NSDate(), at: 0)
+//        tableObjects.insert(NSDate(), at: 0)
 //        let indexPath = IndexPath(row: 0, section: 0)
 //        tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
     // MARK: - Segues
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -109,7 +124,7 @@ class MasterViewController: UITableViewController {
         let object = tableObjects[indexPath.row]
  //       cell.textLabel!.text = object.snippet?.localised?.title
         if let titleLable = cell.viewWithTag(1) as? UILabel {
-            titleLable.text = object.snippet?.localised?.title
+            titleLable.text = object.snippet?.title
         }
         if let imageView = cell.viewWithTag(2) as? UIImageView {
             DispatchQueue.global().async { // [weak self] in
@@ -155,4 +170,30 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        print(searchText)
+        if searchText.count < 3 {
+            return // to many results
+        }
+        search(searchText: searchText)
+    }
+
 }

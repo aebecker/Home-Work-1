@@ -40,15 +40,17 @@ struct VideoSnippet {
     var categoryId:String?
     var channelId:String?
     var channelTitle:String?
+    var title:String?
     var description:String?
     var publishedAt:String?
     var localised:VideoLocalized?
     var thumbnail:VideoThumbnail?
 
-    init(categoryId:String?, channelId:String?, channelTitle:String?, description:String?, publishedAt:String?) {
+    init(categoryId:String?, channelId:String?, channelTitle:String?, title:String?, description:String?, publishedAt:String?) {
         self.categoryId = categoryId
         self.channelId = channelId
         self.channelTitle = channelTitle
+        self.title = title
         self.description = description
         self.publishedAt = publishedAt
     }
