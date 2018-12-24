@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA14041421D00BFA006B61D8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14041321D00BFA006B61D8 /* Video.swift */; };
+		EA14041621D00FB3006B61D8 /* UTTop10API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14041521D00FB3006B61D8 /* UTTop10API.swift */; };
 		EADA065A21CCFECF000799AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA065921CCFECF000799AD /* AppDelegate.swift */; };
 		EADA065C21CCFECF000799AD /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA065B21CCFECF000799AD /* MasterViewController.swift */; };
 		EADA065E21CCFECF000799AD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA065D21CCFECF000799AD /* DetailViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EA14041321D00BFA006B61D8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		EA14041521D00FB3006B61D8 /* UTTop10API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTTop10API.swift; sourceTree = "<group>"; };
 		EADA065621CCFECF000799AD /* Home Work 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Work 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADA065921CCFECF000799AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EADA065B21CCFECF000799AD /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA14040F21D0027B006B61D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA14041321D00BFA006B61D8 /* Video.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA14041021D00289006B61D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EADA066421CCFED0000799AD /* LaunchScreen.storyboard */,
+				EADA065F21CCFECF000799AD /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EA14041121D002BF006B61D8 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EA14041521D00FB3006B61D8 /* UTTop10API.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		EA14041221D00336006B61D8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EADA065B21CCFECF000799AD /* MasterViewController.swift */,
+				EADA065D21CCFECF000799AD /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		EADA064D21CCFECF000799AD = {
 			isa = PBXGroup;
 			children = (
@@ -99,12 +137,12 @@
 		EADA065821CCFECF000799AD /* Home Work 1 */ = {
 			isa = PBXGroup;
 			children = (
+				EA14041221D00336006B61D8 /* Controllers */,
+				EA14041121D002BF006B61D8 /* Support */,
+				EA14041021D00289006B61D8 /* Views */,
+				EA14040F21D0027B006B61D8 /* Model */,
 				EADA065921CCFECF000799AD /* AppDelegate.swift */,
-				EADA065B21CCFECF000799AD /* MasterViewController.swift */,
-				EADA065D21CCFECF000799AD /* DetailViewController.swift */,
-				EADA065F21CCFECF000799AD /* Main.storyboard */,
 				EADA066221CCFED0000799AD /* Assets.xcassets */,
-				EADA066421CCFED0000799AD /* LaunchScreen.storyboard */,
 				EADA066721CCFED0000799AD /* Info.plist */,
 			);
 			path = "Home Work 1";
@@ -259,6 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA14041621D00FB3006B61D8 /* UTTop10API.swift in Sources */,
+				EA14041421D00BFA006B61D8 /* Video.swift in Sources */,
 				EADA065E21CCFECF000799AD /* DetailViewController.swift in Sources */,
 				EADA065C21CCFECF000799AD /* MasterViewController.swift in Sources */,
 				EADA065A21CCFECF000799AD /* AppDelegate.swift in Sources */,
