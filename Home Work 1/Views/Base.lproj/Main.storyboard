@@ -40,7 +40,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="urQ-bp-ekC" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="370.66666666666669" height="690"/>
                                         <subviews>
-                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-bC-KBQ" userLabel="Video View" customClass="YTPlayerView">
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-bC-KBQ" userLabel="Video View">
                                                 <rect key="frame" x="0.0" y="0.0" width="370.66666666666669" height="250"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
