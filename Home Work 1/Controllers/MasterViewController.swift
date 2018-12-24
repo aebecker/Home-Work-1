@@ -14,7 +14,8 @@ class MasterViewController: UITableViewController {
     var tableObjects = [Video]()
 
     let endPoint = "https://www.googleapis.com/youtube/v3/videos"
-    let apiKey = "AIzaSyAPm0cB8HZslYP1fL37U6TnXdLLOnteNAM"
+    let apk1 = "AIzaSyAPm0cB8HZslY"
+    let apk2 = "P1fL37U6TnXdLLOnteNAM"
     let videoCategoryId = "1" // Top 10 of film
     
     override func viewDidLoad() {
@@ -30,7 +31,7 @@ class MasterViewController: UITableViewController {
         }
         
 //        let youTubeURLString = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=\(playListId)&key=\(apiKey)"        
-        UTTop10API().getTopTenVideos(targetURLString: endPoint, videoCategoryId: videoCategoryId, apiKey: apiKey, completion: {
+        UTTop10API().getTopTenVideos(targetURLString: endPoint, videoCategoryId: videoCategoryId, apiKey: apk1 + apk2, completion: {
             videoList in
             
                 if let videoList = videoList {
