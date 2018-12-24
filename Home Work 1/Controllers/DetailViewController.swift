@@ -10,11 +10,15 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var detailPlayerView: YTPlayerView!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
+            if let playerView = detailPlayerView {
+                playerView.load(withVideoId: detail.id!)
+            }
             if let label = detailDescriptionLabel {
                 label.text = detail.snippet?.localised?.description
             }
@@ -33,24 +37,4 @@ class DetailViewController: UIViewController {
             configureView()
         }
     }
-
-//    if let range = strUrl.range(of: "=") {
-//        let strIdentifier = strUrl.substring(from: range.upperBound)
-//        let playerViewController = AVPlayerViewController()
-//        self.present(playerViewController, animated: true, completion: nil)
-//        XCDYouTubeClient.default().getVideoWithIdentifier(strIdentifier) {
-//
-//            [weak playerViewController] (video: XCDYouTubeVideo?, error: Error?) in
-//            if let streamURLs = video?.streamURLs, let streamURL =
-//                (streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ??
-//                    streamURLs[YouTubeVideoQuality.hd720] ??
-//                    streamURLs[YouTubeVideoQuality.medium360] ??
-//                    streamURLs[YouTubeVideoQuality.small240]) {
-//                playerViewController?.player = AVPlayer(url: streamURL)
-//            } else {
-//                self.dismiss(animated: true, completion: nil)
-//            }
-//        }
-//    }
-
 }

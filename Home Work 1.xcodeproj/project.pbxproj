@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48A15F982642269A81B1247E /* libPods-Home Work 1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 549CCD5D1F3784294D6089C8 /* libPods-Home Work 1.a */; };
 		EA14041421D00BFA006B61D8 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14041321D00BFA006B61D8 /* Video.swift */; };
 		EA14041621D00FB3006B61D8 /* UTTop10API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14041521D00FB3006B61D8 /* UTTop10API.swift */; };
 		EADA065A21CCFECF000799AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADA065921CCFECF000799AD /* AppDelegate.swift */; };
@@ -37,8 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		549CCD5D1F3784294D6089C8 /* libPods-Home Work 1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Home Work 1.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C8407BF3ABD5849D9B64130 /* Pods-Home Work 1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Work 1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Home Work 1/Pods-Home Work 1.debug.xcconfig"; sourceTree = "<group>"; };
+		BE139843D7A1DEAD55733475 /* Pods-Home Work 1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Home Work 1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Home Work 1/Pods-Home Work 1.release.xcconfig"; sourceTree = "<group>"; };
 		EA14041321D00BFA006B61D8 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		EA14041521D00FB3006B61D8 /* UTTop10API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTTop10API.swift; sourceTree = "<group>"; };
+		EA7CEBC921D1046800C9F75B /* HomeWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeWork-Bridging-Header.h"; sourceTree = "<group>"; };
 		EADA065621CCFECF000799AD /* Home Work 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Work 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EADA065921CCFECF000799AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EADA065B21CCFECF000799AD /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48A15F982642269A81B1247E /* libPods-Home Work 1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6352A9CE00A3FE19529A7AF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C8407BF3ABD5849D9B64130 /* Pods-Home Work 1.debug.xcconfig */,
+				BE139843D7A1DEAD55733475 /* Pods-Home Work 1.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7CB4ED771C605C754237012F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				549CCD5D1F3784294D6089C8 /* libPods-Home Work 1.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EA14040F21D0027B006B61D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +144,8 @@
 				EADA066F21CCFED0000799AD /* Home Work 1Tests */,
 				EADA067A21CCFED0000799AD /* Home Work 1UITests */,
 				EADA065721CCFECF000799AD /* Products */,
+				6352A9CE00A3FE19529A7AF9 /* Pods */,
+				7CB4ED771C605C754237012F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +169,7 @@
 				EADA065921CCFECF000799AD /* AppDelegate.swift */,
 				EADA066221CCFED0000799AD /* Assets.xcassets */,
 				EADA066721CCFED0000799AD /* Info.plist */,
+				EA7CEBC921D1046800C9F75B /* HomeWork-Bridging-Header.h */,
 			);
 			path = "Home Work 1";
 			sourceTree = "<group>";
@@ -173,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EADA068021CCFED0000799AD /* Build configuration list for PBXNativeTarget "Home Work 1" */;
 			buildPhases = (
+				194C4EE674EADD59BB3211B8 /* [CP] Check Pods Manifest.lock */,
 				EADA065221CCFECF000799AD /* Sources */,
 				EADA065321CCFECF000799AD /* Frameworks */,
 				EADA065421CCFECF000799AD /* Resources */,
+				9D5A366B41996C39A061C49C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +319,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		194C4EE674EADD59BB3211B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Home Work 1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D5A366B41996C39A061C49C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Home Work 1/Pods-Home Work 1-resources.sh",
+				"${PODS_ROOT}/youtube-ios-player-helper/youtube-ios-player-helper/Assets.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Home Work 1/Pods-Home Work 1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EADA065221CCFECF000799AD /* Sources */ = {
@@ -413,6 +488,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "Home Work 1/HomeWork-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -467,6 +543,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "Home Work 1/HomeWork-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -474,6 +551,7 @@
 		};
 		EADA068121CCFED0000799AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C8407BF3ABD5849D9B64130 /* Pods-Home Work 1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -485,6 +563,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mcrsys.Home-Work-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Home Work 1/HomeWork-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -492,6 +571,7 @@
 		};
 		EADA068221CCFED0000799AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE139843D7A1DEAD55733475 /* Pods-Home Work 1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +583,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mcrsys.Home-Work-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Home Work 1/HomeWork-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
