@@ -31,7 +31,7 @@ class UTTop10API {
                 if let error = error {
                     print(error)
                 } else {
-                    print(String(decoding: data!, as: UTF8.self))
+//                  print(String(decoding: data!, as: UTF8.self))
                     if let usableData = data {
                         let json = try? JSONSerialization.jsonObject(with: usableData, options: [])
                         if let jsonData = json as? [String:Any]? {
