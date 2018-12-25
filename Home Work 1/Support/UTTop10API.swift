@@ -12,14 +12,13 @@ class UTTop10API {
     
     func getTopTenVideos(targetURLString: String, searchText: String, apiKey: String, completion:@escaping ((_ videoList:VideoList?) -> Void)) {
         let queryItems = [URLQueryItem(name: "part", value: "snippet,id"),
-//                          URLQueryItem(name: "videoCategoryId", value: videoCategoryId),
-                          URLQueryItem(name: "chart", value:"mostPopular"),
-                          URLQueryItem(name: "regionCode", value:"US"),
+ //                         URLQueryItem(name: "videoCategoryId", value: "1"),
+ //                         URLQueryItem(name: "chart", value:"mostPopular"),
+//                          URLQueryItem(name: "regionCode", value:"US"),
 //                          URLQueryItem(name: "id", value:"Ks-_Mh1QhMc"),
                             URLQueryItem(name: "q", value:searchText),
-                          URLQueryItem(name: "maxResults", value:"10"),
-            
-                          URLQueryItem(name: "key", value: apiKey)]
+                            URLQueryItem(name: "maxResults", value:"10"),
+                            URLQueryItem(name: "key", value: apiKey)]
 
         let urlComps = NSURLComponents(string: targetURLString)!
         urlComps.queryItems = queryItems
@@ -32,11 +31,10 @@ class UTTop10API {
                 if let error = error {
                     print(error)
                 } else {
+                    print(String(decoding: data!, as: UTF8.self))
                     if let usableData = data {
                         let json = try? JSONSerialization.jsonObject(with: usableData, options: [])
                         if let jsonData = json as? [String:Any]? {
-                            print(jsonData as Any)
-
                             if let error = jsonData?["error"] as? [String:Any] {
                                 print(error)
                                 DispatchQueue.main.async {
@@ -56,7 +54,7 @@ class UTTop10API {
         }
     }
     
-    private func decode(json:[String:Any]?) -> VideoList? {
+    func decode(json:[String:Any]?) -> VideoList? {
         
         var videos = [Video]()
         if let jsonData = json {
